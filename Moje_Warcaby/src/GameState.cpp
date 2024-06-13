@@ -96,6 +96,29 @@ void GameState::stateEvent(){
 bool GameState::loadMedia(){
     bool initSuccessful = true;
 
+
+	
+		// Ładowanie tekstury sprite'a
+    if (!spriteSheetTexture.loadFromFile("data/White_Pawn_Destroy.png")) {
+        printf("Could not load sprite");
+        initSuccessful = false;
+    }
+    // Inicjalizacja klipów sprite'ów
+    // Czerwony pionek
+    SDL_Rect destroyPiece1 = {0, 0, BUTTON_WIDTH, BUTTON_HEIGHT};
+    spriteClips.push_back(destroyPiece1);
+    // Czarny pionek
+    SDL_Rect destroyPiece2 = {BUTTON_WIDTH, 0, BUTTON_WIDTH, BUTTON_HEIGHT};
+    spriteClips.push_back(destroyPiece2);
+    // Czerwony król
+    SDL_Rect destroyPiece3 = {BUTTON_WIDTH * 2, 0, BUTTON_WIDTH, BUTTON_HEIGHT};
+    spriteClips.push_back(destroyPiece3);
+    // Czarny król
+    SDL_Rect destroyPiece4 = {BUTTON_WIDTH * 3, 0, BUTTON_WIDTH, BUTTON_HEIGHT};
+    spriteClips.push_back(destroyPiece4);
+    cout << typeid(spriteClips).name() << endl;
+	
+
     // Ładowanie tekstury sprite'a
     if (!spriteSheetTexture.loadFromFile("data/CheckerSprites.png")) {
         printf("Could not load sprite");
@@ -114,7 +137,8 @@ bool GameState::loadMedia(){
     // Czarny król
     SDL_Rect blackKing = {BUTTON_WIDTH * 3, 0, BUTTON_WIDTH, BUTTON_HEIGHT};
     spriteClips.push_back(blackKing);
-
+	
+	
     int index = 0;
     bool indent = true;
     int xStart;
@@ -154,8 +178,8 @@ StateEnum GameState::stateUpdate(){
 
 // Metoda renderująca stan gry
 void GameState::stateRender(){
-    // Ustawienie koloru tła na jasny kolor drewna
-    SDL_SetRenderDrawColor(gRenderer, 0xD4, 0x9A, 0x6A, 0xFF);
+    // Ustawienie koloru tła na ciemny kolor
+    SDL_SetRenderDrawColor(gRenderer, 0x32, 0x0D, 0x94, 0xFF);
     // Wyczyść ekran
     SDL_RenderClear(gRenderer);
 

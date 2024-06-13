@@ -55,8 +55,8 @@ void CheckersBoard::turnHighLightOff(){
 void CheckersBoard::drawBoard(){
     bool indent = false;                     // Flaga określająca, czy wiersz powinien być wcięty
     int xStart;
-    SDL_SetRenderDrawColor(gRenderer, 0x55, 0x27, 0x00, 0xFF); // Ustawienie koloru ciemnego drewna
-
+    SDL_SetRenderDrawColor(gRenderer, 0x86, 0x75, 0xB4, 0xFF); // Ustawienie koloru jasnego 
+	//jasny kolor jest ustawiany w game state
     for (int y = 0; y < SCREEN_HEIGHT; y += BUTTON_HEIGHT) {
         if (indent) {
             xStart = BUTTON_WIDTH;           // Jeśli wiersz jest wcięty, zaczyna się od szerokości przycisku
@@ -76,14 +76,14 @@ void CheckersBoard::drawBoard(){
 // Metoda rysująca podświetlenia na planszy
 void CheckersBoard::drawHighlights() {
     if (highLight) {
-        SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF); // Ustawienie koloru na biały
+        SDL_SetRenderDrawColor(gRenderer, 0x32, 0x0D, 0xFA, 0xFF); // Ustawienie koloru na ciemny
         SDL_Rect outLine = {highLightSelected.x, highLightSelected.y, BUTTON_WIDTH, BUTTON_HEIGHT}; // Definicja obrysu podświetlenia
-        SDL_RenderDrawRect(gRenderer, &outLine); // Rysowanie obrysu
+        SDL_RenderFillRect(gRenderer, &outLine); // Rysowanie obrysu
 
-        SDL_SetRenderDrawColor(gRenderer, 0x55, 0xFF, 0x55, 0xFF); // Ustawienie koloru na zielony
+        SDL_SetRenderDrawColor(gRenderer, 0xF3, 0x07, 0xF0, 0xFF); // Ustawienie koloru na rozowy
         for (int indexOfValidMoves = 0; indexOfValidMoves < validLocations.size(); indexOfValidMoves++) {
             SDL_Rect outLineValid = {validLocations[indexOfValidMoves].x * 80, validLocations[indexOfValidMoves].y * 80, BUTTON_WIDTH, BUTTON_HEIGHT}; // Definicja obrysu prawidłowego ruchu
-            SDL_RenderDrawRect(gRenderer, &outLineValid); // Rysowanie obrysu prawidłowego ruchu
+            SDL_RenderFillRect(gRenderer, &outLineValid); // Rysowanie obrysu prawidłowego ruchu
         }
     }
 }
@@ -93,22 +93,22 @@ void CheckersBoard::drawBoardPeices(int x, int y, Button *boardButton){
     switch (virtualBoard[x][y]) {
         case RED_PIECE:                    // Jeśli pole zawiera czerwony pionek
             currentSprite = RED_PIECE;
-            boardButton->render(currentSprite - 1);
+            boardButton->render(0);
             break;
 
         case BLACK_PIECE:                  // Jeśli pole zawiera czarny pionek
             currentSprite = BLACK_PIECE;
-            boardButton->render(currentSprite - 1);
+            boardButton->render(1);
             break;
 
         case RED_KING:                     // Jeśli pole zawiera czerwonego króla
             currentSprite = RED_KING;
-            boardButton->render(currentSprite - 1);
+            boardButton->render(2);
             break;
 
         case BLACK_KING:                   // Jeśli pole zawiera czarnego króla
             currentSprite = BLACK_KING;
-            boardButton->render(currentSprite - 1);
+            boardButton->render(3);
             break;
 
         default:                           // W przypadku domyślnym (puste pole)

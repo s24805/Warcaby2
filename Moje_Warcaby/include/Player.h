@@ -1,11 +1,3 @@
-//
-//  Player.h
-//  CheckersProject
-//
-//  Created by Benjamin Emdon on 2016-02-13.
-//  Copyright © 2016 Ben Emdon. 
-//
-
 #ifndef Player_h
 #define Player_h
 

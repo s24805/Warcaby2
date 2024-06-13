@@ -1,11 +1,3 @@
-//
-//  ApplicationStateManager.h
-//  SDL_Checkers
-//
-//  Created by Jacky Chiu on 2016-02-28.
-//  Copyright © 2016 Jacky Chiu. 
-//
-
 #ifndef ApplicationStateManager_h
 #define ApplicationStateManager_h
 

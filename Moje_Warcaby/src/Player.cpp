@@ -2,6 +2,8 @@
 #include "../include/CheckersBoard.h"
 #include "../include/Button.h"
 #include "../include/GameState.h"
+#include "../include/Texture.h"
+#include "../include/Application.h"
 
 // Konstruktor klasy Player
 Player::Player(bool topSideOfBoard, CheckersBoard *board, Button buttons[]){
@@ -180,8 +182,10 @@ void Player::movePiece(vector<vector<int>> &pBoard, vector<Piece>& teamMove, int
 
 // Metoda zabijająca pionek na planszy
 void Player::killPiece(vector<vector<int>> &pBoard, int x, int y) {
+    cout<<"Captured piece: \t("<<x<<" ,"<<y<<")\t"<<"from team: "<<pBoard[x][y]<<endl;
     pBoard[x][y] = EMPTY_PIECE; // Ustawia pole na planszy jako puste
     killWasMade = true; // Ustawia flagę informującą, że zabójstwo miało miejsce
+    
 }
 
 // Metoda aktualizująca zespół gracza

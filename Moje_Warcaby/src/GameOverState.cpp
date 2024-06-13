@@ -40,10 +40,7 @@ StateEnum GameOverState::stateUpdate(){
     return currentStateEnum;
 }
 
-// Metoda renderująca ekran
 void GameOverState::stateRender(){
-    // Ustawienie koloru tła na jasny kolor drewna
-    SDL_SetRenderDrawColor(gRenderer, 0xD4, 0x9A, 0x6A, 0xFF);
     // Wyczyść ekran
     SDL_RenderClear(gRenderer);
 }

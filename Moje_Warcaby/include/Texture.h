@@ -1,11 +1,3 @@
-//
-//  Texture.h
-//  SDL_Checkers
-//
-//  Created by Jacky Chiu on 2016-02-14.
-//  Copyright © 2016 Jacky Chiu. 
-//
-
 #ifndef Texture_h
 #define Texture_h
 

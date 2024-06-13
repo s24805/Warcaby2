@@ -1,11 +1,3 @@
-//
-//  RealPlayer.h
-//  SDL_Checkers
-//
-//  Created by Jacky Chiu on 2016-03-02.
-//  Copyright © 2016 Jacky Chiu. All rights reserved.
-//
-
 #ifndef RealPlayer_h
 #define RealPlayer_h
 

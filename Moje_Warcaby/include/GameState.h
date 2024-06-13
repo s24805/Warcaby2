@@ -1,11 +1,3 @@
-//
-//  GameState.h
-//  SDL_Checkers
-//
-//  Created by Jacky Chiu on 2016-02-25.
-//  Copyright © 2016 Jacky Chiu.
-//
-
 #ifndef GameState_h
 #define GameState_h
 
@@ -40,7 +32,6 @@ class ApplicationStateManager;
 class Button;
 class CheckersBoard;
 class Player;
-class AI;
 class Texture;
 
 class GameState: public ApplicationState{

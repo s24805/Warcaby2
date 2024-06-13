@@ -25,6 +25,7 @@ int GAMEMODE = 0;
 
 // Wektor przechowujący klipy sprite'ów
 vector<SDL_Rect> spriteClips;
+vector<SDL_Rect> spriteClipsDestroy;
 
 // Tekstura przechowująca sprite'y
 Texture spriteSheetTexture;
@@ -118,12 +119,7 @@ int Application::startApplication(){
             applicationStateManager->changeStates(); // Zmiana stanów aplikacji
         }
         SDL_RenderPresent(gRenderer); // Odświeżenie renderera
-        if (applicationStateManager->getCurrentStateEnum() == MENU_STATE) {
-            SDL_Delay(30); // Opóźnienie dla stanu menu
-        }
-        else {
-            SDL_Delay(100); // Opóźnienie dla innych stanów
-        }
+		SDL_Delay(100); // Opóźnienie dla innych stanów
     }
 
     closeApplication(); // Zamknięcie aplikacji

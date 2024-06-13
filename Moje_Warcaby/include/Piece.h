@@ -1,11 +1,3 @@
-//
-//  Piece.hpp
-//  CheckersProject
-//
-//  Created by Benjamin Emdon on 2016-02-13.
-//  Copyright © 2016 Ben Emdon. 
-//
-
 #ifndef Piece_h
 #define Piece_h
 

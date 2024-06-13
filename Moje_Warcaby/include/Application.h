@@ -1,11 +1,3 @@
-//
-//  Application.h
-//  SDL_Checkers
-//
-//  Created by Jacky Chiu on 2016-02-18.
-//  Copyright © 2016 Jacky Chiu. 
-//
-
 #ifndef Application_h
 #define Application_h
 
@@ -48,6 +40,7 @@ protected:
 };
 
 extern vector<SDL_Rect> spriteClips;
+extern vector<SDL_Rect> spriteClipsDestroy;
 extern Texture spriteSheetTexture;
 extern int currentSprite;
 
